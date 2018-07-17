@@ -58,7 +58,7 @@ function fibonacci(){
     else{
         var a=0 , b=1;
         output+=" 0 1";
-        for(var i = 3;i<=num;i++){
+        for(var i = 3 ; i <= num ;i++){
             c=a+b;
             output+=" "+c;
             a=b;
@@ -68,6 +68,73 @@ function fibonacci(){
         
     showResult("fibonacci of "+num+" is:"+output); 
 }
+
+function reverse(){
+     var num=getUserInput();
+    
+     rev = 0;
+    while(num != 0){
+        r = num % 10;
+        rev = rev * 10 + r;
+        num =Math.floor(num / 10) ;
+        
+    }
+        showResult("reverse" +rev); 
+}
+
+function palindrome(){
+   var num = getUserInput();
+   
+  var rev = 0;
+    var num2 = num;
+    while(num != 0){
+        r = num % 10;
+        rev=rev * 10 + r;
+        num = Math.floor(num / 10) ;
+        
+    }
+    
+    if(num2 == rev ){
+        showResult("palindrome");
+    }
+    else{
+        showResult("not palindrome");
+    }
+        
+
+}
+function sumofdigits(){
+   var num=getUserInput();
+   var sum = 0;
+
+    while(num != 0){
+       sum += num % 10;
+        num = Math.floor(num / 10);
+    }
+
+showResult("sumofdigits  is:" +sum); 
+
+}
+
+    
+    
+
+function sumofsingledigits(){
+   var num=getUserInput();
+   var num2;
+   sum = num2;
+    while(num > 9){
+        sum=Math.floor(num / 10 )+ num % 10;
+        num = sum;
+    }
+
+showResult("sumofsingledigits  is:" +sum); 
+
+}
+
+
+
+
 
 function getUserInput(){
     num=document.getElementById("num").value;
